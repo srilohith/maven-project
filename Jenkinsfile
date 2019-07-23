@@ -13,7 +13,7 @@ pipeline {
 stages{
         stage('Build'){
             steps {
-                bat 'mvn clean package'
+                sh 'mvn clean package'
             }
             post {
                 success {
@@ -27,13 +27,13 @@ stages{
             parallel{
                 stage ('Deploy to Staging'){
                     steps {
-                        bat "copy **/target/*.war D:/personal projects/tomcat-servers/apache-tomcat-9.0.22-staging/webapps"
+                        sh "cp **/target/*.war D:/personal projects/tomcat-servers/apache-tomcat-9.0.22-staging/webapps"
                     }
                 }
 
                 stage ("Deploy to Production"){
                     steps {
-                        sh "copy **/target/*.war D:/personal projects/tomcat-servers/apache-tomcat-9.0.22-prod/webapps"
+                        sh "cp **/target/*.war D:/personal projects/tomcat-servers/apache-tomcat-9.0.22-prod/webapps"
                     }
                 }
             }
