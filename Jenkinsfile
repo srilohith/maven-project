@@ -27,13 +27,13 @@ stages{
             parallel{
                 stage ('Deploy to Staging'){
                     steps {
-                        bat "copy webapp/target/webapp.war D:/personal-projects/tomcat-servers/apache-tomcat-9.0.22-staging/webapps"
+                        bat "copy webapp/target/webapp.war D:/personal-projects/tomcat-servers/apache-tomcat-9.0.22-staging/webapps/"
                     }
                 }
 
                 stage ("Deploy to Production"){
                     steps {
-                        bat "copy webapp/target/webapp.war D:/personal-projects/tomcat-servers/apache-tomcat-9.0.22-prod/webapps"
+                        bat "copy webapp/target/webapp.war D:/personal-projects/tomcat-servers/apache-tomcat-9.0.22-prod/webapps/"
                     }
                 }
             }
