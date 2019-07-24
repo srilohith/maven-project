@@ -10,6 +10,12 @@ pipeline {
          pollSCM('* * * * *')
      }*/
 
+     stage('Initialize')
+    {
+        def dockerHome = tool 'MyDocker'
+        env.PATH = "${dockerHome}/bin:${mavenHome}/bin:${env.PATH}"
+    }
+
 stages{
         stage('Build'){
             steps {
