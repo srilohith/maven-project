@@ -10,14 +10,15 @@ pipeline {
          pollSCM('* * * * *')
      }*/
 
-     stage('Initialize')
+
+
+stages{
+          stage('Initialize')
     {
         def dockerHome = tool 'MyDocker'
         def mavenHome = tool 'localMaven'
         env.PATH = "${dockerHome}/bin:${mavenHome}/bin:${env.PATH}"
     }
-
-stages{
         stage('Build'){
             steps {
                 sh 'mvn clean package'
