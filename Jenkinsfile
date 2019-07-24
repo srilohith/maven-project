@@ -15,7 +15,7 @@ stages{
             steps {
                 sh 'mvn clean package'
                 sh 'echo $PATH'
-                sh "docker build . -t tomcatwebapp:${env.BUILD_ID}"
+                sh "docker build ."/*-t tomcatwebapp:${env.BUILD_ID}*/
             }
            
         }
