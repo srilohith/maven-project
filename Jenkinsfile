@@ -19,9 +19,9 @@ pipeline {
 stages{
         stage('Build'){
             steps {
-                bat 'echo %PATH%'
-                bat 'mvn clean package'
-                bat "docker build ."/*-t tomcatwebapp:${env.BUILD_ID}*/
+                sh 'echo %PATH%'
+                sh 'mvn clean package'
+                sh "docker build ."/*-t tomcatwebapp:${env.BUILD_ID}*/
             }
            
         }
