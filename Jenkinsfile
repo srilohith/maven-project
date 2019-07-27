@@ -1,4 +1,4 @@
-node {
+pipeline {
     agent any
 
     /*parameters {
@@ -9,12 +9,12 @@ node {
     /*triggers {
          pollSCM('* * * * *')
      }*/
-       stage('Initialize')
+   /*    stage('Initialize')
     {
         def dockerHome = tool 'MyDocker'
         def mavenHome = tool 'localMaven'
         env.PATH = "${dockerHome}/bin:${mavenHome}/bin:${env.PATH}"
-    }    
+    }   */ 
 
 
         stage('Build'){
