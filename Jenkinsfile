@@ -16,7 +16,7 @@ pipeline {
         env.PATH = "${dockerHome}/bin:${mavenHome}/bin:${env.PATH}"
     }   */ 
 
-
+stages{
         stage('Build'){
             steps {
                 sh 'mvn clean package'
@@ -25,5 +25,6 @@ pipeline {
             }
            
         }
+    }
     
 }
